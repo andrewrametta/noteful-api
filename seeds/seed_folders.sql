@@ -3,10 +3,10 @@ TRUNCATE folders, notes RESTART IDENTITY CASCADE;
 INSERT INTO folders
     (name)
     VALUES
-    ('Important')
-    ('Work')
-    ('School')
-    ('Family')
+    ('Important'),
+    ('Work'),
+    ('School'),
+    ('Family');
 
 INSERT INTO notes
     (name, modified, folder_id, content)
