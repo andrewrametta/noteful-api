@@ -3,7 +3,7 @@ const path = require("path");
 const xss = require("xss");
 const FoldersService = require("./folders-service");
 
-const folderRouter = express.Router();
+const foldersRouter = express.Router();
 const jsonParser = express.json();
 
 const serializeFolder = (folder) => ({
@@ -11,7 +11,7 @@ const serializeFolder = (folder) => ({
   name: folder.name,
 });
 
-folderRouter
+foldersRouter
   .route("/")
   .get((req, res, next) => {
     const knexInstance = req.app.get("db");
