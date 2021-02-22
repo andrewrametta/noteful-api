@@ -30,7 +30,7 @@ foldersRouter
         return res.status(400).json({
           error: { message: `Missing '${key}' in request body` },
         });
-    FoldersService.insertFolder(knexInstance, newFolder)
+    FoldersService.insertFolder(req.app.get("db"), newFolder)
       .then((folder) => {
         res
           .status(201)
