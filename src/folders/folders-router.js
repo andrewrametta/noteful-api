@@ -26,7 +26,7 @@ foldersRouter
     const newFolder = { name };
 
     for (const [key, value] of Object.entries(newFolder))
-      if (value === null)
+      if (value == null)
         return res.status(400).json({
           error: { message: `Missing '${key}' in request body` },
         });
@@ -70,7 +70,7 @@ foldersRouter
     const folderToUpdate = { name };
 
     const numberOfValues = Object.values(folderToUpdate).filter(Boolean).length;
-    if ((numberOfValues = 0)) {
+    if (numberOfValues === 0) {
       return res.status(400).json({
         error: {
           message: `Request body must contain a name`,
